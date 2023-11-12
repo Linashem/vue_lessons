@@ -1,5 +1,8 @@
 <template>
-  <header :style="{ backgroundColor: isRed ? 'red' : '#ffe4c4' }" class="header">
+  <header
+    :style="{ backgroundColor: isRed ? 'red' : '#ffe4c4' }"
+    :class="{ header: true, whiteColor: isRed }"
+  >
     Header
     <button class="btn" @click="increment">+</button>
     <div>{{ count }}</div>
@@ -30,8 +33,8 @@ export default defineComponent({
     count(newCount, oldCount) {
       console.log('new ', newCount);
       console.log('old ', oldCount);
-      this.isRed=!this.isRed
-    },
+      this.isRed = !this.isRed;
+    }
   }
 });
 </script>
@@ -52,5 +55,8 @@ export default defineComponent({
     padding: 5px;
     border-radius: 5px;
   }
+}
+.whiteColor {
+  color: white;
 }
 </style>
