@@ -1,7 +1,9 @@
 <template>
   <div class="content">
-    Content
-    <!-- <slot></slot> -->
+    Content 
+    <slot></slot>
+    <slot name="bottomSlot"></slot>
+
   </div>
 </template>
 
@@ -10,6 +12,7 @@
 <style lang="scss" scoped>
 .content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;

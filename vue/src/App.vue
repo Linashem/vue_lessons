@@ -7,7 +7,12 @@ import PageFooter from './components/PageFooter.vue';
 <template>
   <div class="wrapper">
     <PageHeader nameComponent="Header props" />
-    <PageContent />
+    <PageContent>
+      <p>Hello from slot</p>
+      <template #bottomSlot>
+        <p>Bottom Slot</p>
+      </template>
+    </PageContent>
     <PageFooter />
   </div>
 </template>
