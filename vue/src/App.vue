@@ -6,7 +6,7 @@ import PageFooter from './components/PageFooter.vue';
 
 <template>
   <div class="wrapper">
-    <PageHeader />
+    <PageHeader nameComponent="Header props" />
     <PageContent />
     <PageFooter />
   </div>

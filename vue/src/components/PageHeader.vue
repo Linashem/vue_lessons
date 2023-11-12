@@ -3,7 +3,7 @@
     :style="{ backgroundColor: isRed ? 'red' : '#ffe4c4' }"
     :class="{ header: true, whiteColor: isRed }"
   >
-    Header
+   {{ nameComponent }}
     <button class="btn" @click="increment">+</button>
     <div>{{ count }}</div>
   </header>
@@ -18,6 +18,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
+  props:['nameComponent'],
   data() {
     return {
       count: 0,
