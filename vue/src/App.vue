@@ -5,11 +5,18 @@ import PageFooter from './components/PageFooter.vue';
 </script>
 
 <template>
-  <PageHeader />
-  <PageContent />
-  <PageFooter />
+  <div class="wrapper">
+    <PageHeader />
+    <PageContent />
+    <PageFooter />
+  </div>
 </template>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
 </style>
