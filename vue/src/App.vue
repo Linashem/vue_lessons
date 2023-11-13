@@ -3,7 +3,8 @@ import PageHeader from '@/components/PageHeader.vue';
 import PageContent from '@/components/PageContent.vue';
 import PageFooter from './components/PageFooter.vue';
 import { computed, ref, watch } from 'vue';
-interface IUser {
+
+export interface IUser {
   name: string;
   age: number;
 }
@@ -25,11 +26,14 @@ const dobleAge = computed(() => {
 });
 
 //watch
-watch(user, (newU, oldU) => {
-  console.log(newU, ' newU');
-  console.log(oldU, ' oldU');
-},
-{deep:true});
+watch(
+  user,
+  (newU, oldU) => {
+    console.log(newU, ' newU');
+    console.log(oldU, ' oldU');
+  },
+  { deep: true }
+);
 </script>
 
 <template>
@@ -44,7 +48,7 @@ watch(user, (newU, oldU) => {
         <p>Bottom Slot</p>
       </template>
     </PageContent>
-    <PageFooter />
+    <PageFooter :user="user" />
   </div>
 </template>
 
