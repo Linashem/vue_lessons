@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer @click="emits('footerEmet', 'my-footer')" class="footer">
     Footer
     <div>{{ props.user.name }}</div>
   </footer>
@@ -7,13 +7,17 @@
 
 <script setup lang="ts">
 import { IUser } from '@/App.vue';
-interface IUserProps {
-  user: IUser;
+interface IfooterEmets {
+  (e: 'footerEmet', value: string): void;
 }
 
-const props = defineProps<IUserProps>();
-console.log(props.user);
+interface IUserProps {
+  user: IUser;
+};
 
+const props = defineProps<IUserProps>();
+const emits= defineEmits<IfooterEmets>();
+console.log(props.user);
 </script>
 
 <style lang="scss" scoped>

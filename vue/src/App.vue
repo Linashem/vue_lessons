@@ -48,7 +48,7 @@ watch(
         <p>Bottom Slot</p>
       </template>
     </PageContent>
-    <PageFooter :user="user" />
+    <PageFooter @footer-emet="(value)=>console.log('footerEmet', value)" :user="user" />
   </div>
 </template>
 
