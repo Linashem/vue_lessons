@@ -2,7 +2,7 @@
 import PageHeader from '@/components/PageHeader.vue';
 import PageContent from '@/components/PageContent.vue';
 import PageFooter from './components/PageFooter.vue';
-import { ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 interface IUser {
   name: string;
   age: number;
@@ -18,6 +18,18 @@ const user = ref<IUser>({
 const ageIncrem = () => {
   user.value.age++;
 };
+
+// computed
+const dobleAge = computed(() => {
+  return user.value.age * 2;
+});
+
+//watch
+watch(user, (newU, oldU) => {
+  console.log(newU, ' newU');
+  console.log(oldU, ' oldU');
+},
+{deep:true});
 </script>
 
 <template>
@@ -26,6 +38,7 @@ const ageIncrem = () => {
     <PageContent>
       <p>{{ user.name + ' - users name' }}</p>
       <p @click="ageIncrem">{{ user.age + ' -users age' }}</p>
+      <p>{{ dobleAge }}</p>
 
       <template #bottomSlot>
         <p>Bottom Slot</p>
